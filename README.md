@@ -20,3 +20,5 @@ Run `npm install` or `yarn`
 
 To run the dev server run `npm run dev` or `yarn dev`
  -  This will run the api in Development mode in port 5000. The API URI should be either `localhost:5000` or `127.0.0.1:5000`
+
+Run `npm run test` or `yarn test` to make sure all endpoints are working.
