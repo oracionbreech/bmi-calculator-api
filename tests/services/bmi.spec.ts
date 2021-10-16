@@ -1,8 +1,6 @@
 import { calculateImperial, calculateMetric, getWeightClassification } from '../../src/services/bmi'
 
 describe('Body Mass Index Calculator Service', () => {
-
-
     it('should calculate bmi normally with imperial units', async () => {
         const bmi = calculateImperial({
             heightFeet: 5,
@@ -14,8 +12,8 @@ describe('Body Mass Index Calculator Service', () => {
 
     it('should calculate bmi normally with metric units', async () => {
         const bmi = calculateMetric({
-            heightInCentimeters: 170.18,
-            weightInKilograms: 117
+            heightCentimeters: 170.18,
+            weightKilograms: 117
         })
 
         expect(Number(bmi.toFixed(2))).toEqual(40.4)

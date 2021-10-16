@@ -11,10 +11,10 @@ export const calculateImperial = ({
 }
 
 export const calculateMetric = ({
-    heightInCentimeters = 0, weightInKilograms = 0
+    heightCentimeters = 0, weightKilograms = 0
 }) => {
 
-    return (weightInKilograms / ((heightInCentimeters / 100) ** 2));
+    return (weightKilograms / ((heightCentimeters / 100) ** 2));
 }
 
 export const getWeightClassification = (bmi: number) => {

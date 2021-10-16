@@ -7,3 +7,10 @@ export interface ICalculateBmiImperialRequest extends Request {
         weightPounds: number
     }
 }
+
+export interface ICalculateBmiMetricRequest extends Request {
+    body: {
+        heightCentimeters: number,
+        weightKilograms: number
+    }
+}

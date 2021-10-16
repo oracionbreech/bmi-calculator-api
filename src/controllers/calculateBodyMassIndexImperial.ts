@@ -1,6 +1,6 @@
 import { Response } from "express"
 import { StatusCodes } from "http-status-codes"
-import { ImperialSchema } from "../helpers/validateImperialSchema"
+import { ImperialSchema } from "../helpers/validateBmiRequest"
 import { ICalculateBmiImperialRequest } from "../model/request"
 import { calculateImperial, getWeightClassification } from "../services/bmi"
 
