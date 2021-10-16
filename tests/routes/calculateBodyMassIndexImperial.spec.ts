@@ -8,9 +8,12 @@ describe('Post Endpoints', () => {
         try {
             const { body } = await request(app)
                 .post('/bmi/imperial',).send({
-                    heightInches: 200
+                    heightInches: 7,
+                    heightFeet: 5,
+                    weightPounds: 256.6
                 })
 
+            info(body)
 
         } catch (error) {
             // eslint-disable-next-line no-console

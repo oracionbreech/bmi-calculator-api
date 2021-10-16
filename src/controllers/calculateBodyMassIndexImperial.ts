@@ -1,12 +1,29 @@
-import { Request, Response } from "express"
+import { Response } from "express"
 import { StatusCodes } from "http-status-codes"
+import { ImperialSchema } from "../helpers/validateImperialSchema"
+import { ICalculateBmiImperialRequest } from "../model/request"
+import { calculateImperial } from "../services/bmi"
 
-const calculateBodyMassIndexImperial = (req: Request, res: Response) => {
+const calculateBodyMassIndexImperial = async (req: ICalculateBmiImperialRequest, res: Response): Promise<Response> => {
     try {
+
+        await ImperialSchema.validate(req);
+
+
+        const bmi = calculateImperial(req.body)
+
         return res.status(StatusCodes.OK).json({
-            message: "Ok"
+            message: "Ok",
+            bmi
         })
     } catch (error) {
+        if (error.name && error.name === 'ValidationError') {
+            return res.status(StatusCodes.BAD_REQUEST).json({
+                name: error.name,
+                message: error.message
+            })
+        }
+
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             message: 'Internal server error'
         })

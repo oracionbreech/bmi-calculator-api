@@ -5,9 +5,9 @@ describe('Body Mass Index Calculator Service', () => {
 
     it('should calculate bmi normally with imperial units', async () => {
         const bmi = calculateImperial({
-            heightInFeet: 5,
-            heightInInches: 7,
-            weightInPounds: 257.941
+            heightFeet: 5,
+            heightInches: 7,
+            weightPounds: 257.941
         })
         expect(Number(bmi.toFixed(2))).toEqual(40.39)
     })

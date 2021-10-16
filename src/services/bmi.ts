@@ -1,9 +1,9 @@
 export const calculateImperial = ({
-    heightInFeet = 0, heightInInches = 0, weightInPounds = 0
+    heightFeet = 0, heightInches = 0, weightPounds = 0
 }) => {
-    const totalHeight = (heightInFeet * 12) + heightInInches
+    const totalHeight = (heightFeet * 12) + heightInches
 
-    const bmi = (weightInPounds / (totalHeight ** 2)) * 703
+    const bmi = (weightPounds / (totalHeight ** 2)) * 703
 
     return bmi;
 }
