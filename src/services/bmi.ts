@@ -1,3 +1,5 @@
+import { weightClassifications } from "../constants/weightClassifications";
+
 export const calculateImperial = ({
     heightFeet = 0, heightInches = 0, weightPounds = 0
 }) => {
@@ -14,3 +16,11 @@ export const calculateMetric = ({
 
     return (weightInKilograms / ((heightInCentimeters / 100) ** 2));
 }
+
+export const getWeightClassification = (bmi: number) => {
+    const classification = weightClassifications.find(({ getBmi }) => {
+        return getBmi(bmi)
+    })
+    return classification.title
+}
+

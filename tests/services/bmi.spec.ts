@@ -1,4 +1,4 @@
-import { calculateImperial, calculateMetric } from '../../src/services/bmi'
+import { calculateImperial, calculateMetric, getWeightClassification } from '../../src/services/bmi'
 
 describe('Body Mass Index Calculator Service', () => {
 
@@ -19,6 +19,11 @@ describe('Body Mass Index Calculator Service', () => {
         })
 
         expect(Number(bmi.toFixed(2))).toEqual(40.4)
+    })
+
+    it('should get weight classification normally', async () => {
+        const classificationTitle = getWeightClassification(18.6);
+        expect(classificationTitle).toBe("Normal weight")
     })
 
 })

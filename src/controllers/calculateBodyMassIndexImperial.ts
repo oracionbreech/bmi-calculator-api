@@ -9,7 +9,6 @@ const calculateBodyMassIndexImperial = async (req: ICalculateBmiImperialRequest,
 
         await ImperialSchema.validate(req);
 
-
         const bmi = calculateImperial(req.body)
 
         return res.status(StatusCodes.OK).json({
