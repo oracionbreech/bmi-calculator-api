@@ -2,7 +2,7 @@ import { Response } from "express"
 import { StatusCodes } from "http-status-codes"
 import { ImperialSchema } from "../helpers/validateImperialSchema"
 import { ICalculateBmiImperialRequest } from "../model/request"
-import { calculateImperial } from "../services/bmi"
+import { calculateImperial, getWeightClassification } from "../services/bmi"
 
 const calculateBodyMassIndexImperial = async (req: ICalculateBmiImperialRequest, res: Response): Promise<Response> => {
     try {
@@ -11,9 +11,11 @@ const calculateBodyMassIndexImperial = async (req: ICalculateBmiImperialRequest,
 
         const bmi = calculateImperial(req.body)
 
+        const classification = getWeightClassification(bmi)
+
         return res.status(StatusCodes.OK).json({
             message: "Ok",
-            bmi
+            bmi, classification
         })
     } catch (error) {
         if (error.name && error.name === 'ValidationError') {
