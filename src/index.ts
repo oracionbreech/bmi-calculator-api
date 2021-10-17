@@ -5,7 +5,7 @@ import router from './routes';
 import cors from 'cors'
 
 /**
- * Online ordering API Service.
+ * BMI Calculator
  */
 
 const port = 5000;
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => log.info('Online ordering service is now running'));
+  app.listen(port, () => log.info('BMI Calculator is now running'));
 }
 
 export default app
