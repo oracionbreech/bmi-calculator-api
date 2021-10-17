@@ -12,7 +12,8 @@
     "build": "./node_modules/typescript/bin/tsc -p ./tsconfig.json",
     "lint": "npx eslint src --ext .ts",
     "lint:fix": "npx eslint src --ext .ts --fix",
-    "test": "jest --forceExit --detectOpenHandles  --watchAll --runInBand"
+    "test": "jest --forceExit --detectOpenHandles  --watchAll --runInBand",
+    "clean": "rm -rf .devcontainer coverage dist node_modules"
   },
   "husky": {
     "hooks": {
