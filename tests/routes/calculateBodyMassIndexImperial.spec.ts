@@ -6,15 +6,12 @@ describe('Post Endpoints', () => {
     it('should get imperial bmi', async () => {
 
         try {
-            const { body } = await request(app)
+            await request(app)
                 .post('/bmi/imperial',).send({
                     heightInches: 7,
                     heightFeet: 5,
                     weightPounds: 256.6
                 })
-
-            info(body)
-
         } catch (error) {
             // eslint-disable-next-line no-console
             console.warn(error);

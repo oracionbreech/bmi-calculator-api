@@ -144,3 +144,5 @@ dist
 /.docker/data/mysql/*
 /.docker/data/redis/*
 yarn.lock
+
+.devcontainer
